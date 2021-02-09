@@ -1,0 +1,19 @@
+version: "3"
+services:
+  frps:
+    restart: always
+    volumes:
+      - "./frps.ini:/etc/frp/frps.ini"
+    ports:
+      - "7000:7000"
+    #   - "7001:7001"
+    #   - "7400:7400"
+      - "7500:7500"
+    #   - "9122:9122" # for ssh 22
+    #   - "9145:9145" # for smb 445
+    #   - "9189:9189" # fro rdp 3389
+    #   - "10080:10080" # for http
+    #   - "10443:10443" # for https
+    container_name: frps
+    image: dockercat/frps
+    # network_mode: "host"
