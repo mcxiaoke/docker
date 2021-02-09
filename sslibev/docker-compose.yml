@@ -1,0 +1,27 @@
+
+version: '3'
+services:
+
+  sslibev-9001:
+    container_name: sslibev-9001-chacha20-ietf-poly1305
+    image: shadowsocks/shadowsocks-libev:edge
+    ports:
+      - "9001:9001/tcp"
+      - "9001:9001/udp"
+    environment:
+      - METHOD=chacha20-ietf-poly1305
+      - PASSWORD=shadowsocks
+      - SERVER_PORT=9001
+    restart: always
+
+  sslibev-9002:
+    container_name: sslibev-9002-chacha20-ietf-poly1305
+    image: shadowsocks/shadowsocks-libev:edge
+    ports:
+      - "9002:9002/tcp"
+      - "9002:9002/udp"
+    environment:
+      - METHOD=chacha20-ietf-poly1305
+      - PASSWORD=shadowsocks
+      - SERVER_PORT=9002
+    restart: always
